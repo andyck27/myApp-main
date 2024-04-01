@@ -1,0 +1,36 @@
+<h2>Nutrition List</h2>
+
+<div *ngIf="formDataArray.length > 0">
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Food Type</th>
+        <th>Quantity</th>
+        <th>Calories</th>
+        <th>Carbohydrates</th>
+        <th>Protein</th>
+        <th>Fat</th>
+        <th>Date</th>
+        <th>Action</th> <!-- New column for edit button -->
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let nutrition of formDataArray">
+        <td>{{ nutrition.foodType }}</td>
+        <td>{{ nutrition.quantity }}</td>
+        <td>{{ nutrition.calories }}</td>
+        <td>{{ nutrition.carbohydrates }}</td>
+        <td>{{ nutrition.protein }}</td>
+        <td>{{ nutrition.fat }}</td>
+        <td>{{ nutrition.date }}</td>
+        <td><button type="button" class="btn btn-primary" (click)="editNutrition(nutrition)">Edit</button></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<div *ngIf="formDataArray.length === 0">
+  <p>No nutrition data available.</p>
+</div>
+<div class="button-group">
+    <button type="button" class="btn btn-primary" (click)="closeList()">Close</button>
+</div>

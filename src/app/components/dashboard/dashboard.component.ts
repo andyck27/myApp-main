@@ -4,6 +4,7 @@ import {UtilsService} from "../../services/utils.service";
 import {TableFormatMedRq} from "../../domain/table-format-med-rq";
 import {ApiService} from "../../services/api.service";
 import {FormControl, FormGroup, Validators} from "@angular/forms";
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-dashboard',
@@ -21,7 +22,9 @@ export class DashboardComponent implements OnInit{
   constructor(
     private fhirClient: FhirClientService,
     private apiService: ApiService,
-    private utilsService: UtilsService){
+    private utilsService: UtilsService,
+    private router: Router,
+    ){
     this.fhirClient.readyClient();
   }
 
@@ -89,5 +92,13 @@ export class DashboardComponent implements OnInit{
         console.error(err);
       }
     });
+  }
+
+  onEnterNutrition() {
+    this.router.navigate(['/enter-nutrition']);
+  }
+
+  viewNutrition() {
+    this.router.navigate(['/app-view-nutrition-list']);
   }
 }

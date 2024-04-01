@@ -25,6 +25,9 @@ import {AuthInterceptor} from "./providers/auth-interceptor";
 import {MatProgressSpinnerModule} from "@angular/material/progress-spinner";
 import {MatSelectModule} from "@angular/material/select";
 import { PatientObservationsComponent } from './components/patient-observations/patient-observations.component';
+import { EnterNutritionComponent } from './components/enter-nutrition/enter-nutrition.component';
+import { FormsModule } from '@angular/forms';
+import { ViewNutritionListComponent } from './components/view-nutrition-list/view-nutrition-list.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +37,9 @@ import { PatientObservationsComponent } from './components/patient-observations/
     DashboardComponent,
     PatientDemographicsComponent,
     MedRqGridComponent,
-    PatientObservationsComponent
+    PatientObservationsComponent,
+    EnterNutritionComponent,
+    ViewNutritionListComponent
   ],
   imports: [
     BrowserModule,
@@ -53,7 +58,8 @@ import { PatientObservationsComponent } from './components/patient-observations/
     MatSortModule,
     MatSnackBarModule,
     MatProgressSpinnerModule,
-    MatSelectModule
+    MatSelectModule,
+    FormsModule 
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true }

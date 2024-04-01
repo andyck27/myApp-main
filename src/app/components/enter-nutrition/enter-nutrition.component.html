@@ -1,0 +1,38 @@
+<div class="nutrition-form">
+    <h2>Enter Nutrition Information</h2>
+    <form>
+      <div class="form-group">
+        <label for="foodType">Food Type:</label>
+        <input type="text" id="foodType" name="foodType" class="form-control" required [(ngModel)]="foodType">
+      </div>
+      <div class="form-group">
+        <label for="quantity">Quantity:</label>
+        <input type="number" id="quantity" name="quantity" class="form-control" required [(ngModel)]="quantity">
+      </div>
+      <div class="form-group">
+        <label for="calories">Calories:</label>
+        <input type="number" id="calories" name="calories" class="form-control" required [(ngModel)]="calories">
+      </div>
+      <div class="form-group">
+        <label for="carbohydrates">Carbohydrates (g):</label>
+        <input type="number" id="carbohydrates" name="carbohydrates" class="form-control" required [(ngModel)]="carbohydrates">
+      </div>
+      <div class="form-group">
+        <label for="protein">Protein (g):</label>
+        <input type="number" id="protein" name="protein" class="form-control" required [(ngModel)]="protein">
+      </div>
+      <div class="form-group">
+        <label for="fat">Fat (g):</label>
+        <input type="number" id="fat" name="fat" class="form-control" required [(ngModel)]="fat">
+      </div>
+      <div class="form-group">
+        <label for="date">Date:</label>
+        <input type="date" id="date" name="date" class="form-control" required [(ngModel)]="date">
+      </div>
+      <div class="button-group">
+        <button type="button" class="btn btn-primary" (click)="saveNutrition()">Save</button>
+        <button type="button" class="btn btn-secondary" (click)="cancelNutrition()">Cancel</button>
+      </div>
+    </form>
+  </div>
+  
