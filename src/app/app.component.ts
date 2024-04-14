@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'CS6440 Lab 4 - SMART on FHIR';
+  title = 'Nutrition';
 }
