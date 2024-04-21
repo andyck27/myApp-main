@@ -25,11 +25,27 @@
         <td>{{ nutrition.date }}</td>
         <td><button type="button" class="btn btn-primary" (click)="editNutrition(nutrition)">Edit</button></td>
       </tr>
+      <tr>
+        <td>Total:</td>
+        <td></td>
+        <td>{{ totalCalories }}</td>
+        <td>{{ totalCarbohydrates }}</td>
+        <td>{{ totalProtein }}</td>
+        <td>{{ totalFat }}</td>
+        <td></td>
+        <td></td>
+      </tr>
     </tbody>
   </table>
 </div>
 <div *ngIf="formDataArray.length === 0">
   <p>No nutrition data available.</p>
+</div>
+<div *ngIf="isAtRiskOfDiabetes">
+  <p>The patient's daily nutrition intake may indicate a risk of diabetes</p>
+</div>
+<div *ngIf="isAtRiskOfHeartAttack">
+  <p>The patient's daily nutrition intake may indicate a risk of myocardial infarction</p>
 </div>
 <div class="button-group">
     <button type="button" class="btn btn-primary" (click)="closeList()">Close</button>
